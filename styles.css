@@ -21,10 +21,19 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: Manrope, Arial, sans-serif;
+ 
   font-size: 15px;
   line-height: 1.65;
+ 
+
+
+
+
 }
+
+
+
+
 
 img,
 video {
@@ -57,6 +66,19 @@ a {
   gap: 48px;
 }
 
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.header .logo img {
+  height: 65px; 
+  width: auto;
+  display: block;
+}
+
 .logo {
   font-size: 18px;
   font-weight: 800;
@@ -66,8 +88,9 @@ a {
 }
 
 .logo span {
+  font-family: serif;
   font-weight: 500;
-  margin-left: 3px;
+  margin-left: 1px;
 }
 
 .desktop-nav {
@@ -143,7 +166,7 @@ a {
 .hero h1 {
   font-size: clamp(62px, 7.1vw, 116px);
   line-height: .9;
-  letter-spacing: -.065em;
+  
   margin: 0 0 30px;
   font-weight: 800;
 }
@@ -158,7 +181,7 @@ h2 em {
 .hero-text {
   max-width: 460px;
   color: #5d5951;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.7;
   margin: 0 0 38px;
 }
@@ -257,7 +280,7 @@ h2 em {
 }
 
 .intro-copy p {
-  font-size: 17px;
+  font-size: 20px;
   color: #5e5a53;
   margin: 0 0 22px;
 }
@@ -285,9 +308,11 @@ h2 em {
 
 .machine-head>div p {
   margin: 0;
+  font-size: 15px;
 }
 
 .machine-head-copy {
+  font-size: 15px;
   max-width: 470px;
   color: #666158;
   margin: 0;
@@ -296,7 +321,7 @@ h2 em {
 .product-stage {
   max-width: 1440px;
   margin: auto;
-  height: min(65vw, 780px);
+  height: min(70vw, 950px);
   position: relative;
   overflow: hidden;
   background: #ddd8cf;
@@ -324,7 +349,7 @@ h2 em {
 
 .machine-bottom {
   max-width: 1050px;
-  margin: 78px auto 0;
+  margin: 50px auto 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10vw;
@@ -340,7 +365,7 @@ h2 em {
 .machine-bottom>p {
   color: #625e56;
   font-size: 17px;
-  margin: 40px 0 0;
+  margin: 30px 0 0;
   max-width: 480px;
 }
 
@@ -372,6 +397,7 @@ h2 em {
 .details-copy .small-label {
   color: #8f8a80;
   margin: 0 0 38px;
+  font-size: 15px;
 }
 
 .details h2 {
@@ -442,12 +468,13 @@ h2 em {
 
 .ritual-copy h2 {
   margin-bottom: 35px;
+  letter-spacing: 1.5px;
 }
 
 .ritual-copy>p:last-child {
   max-width: 450px;
   color: #5d5952;
-  font-size: 16px;
+  font-size: 19px;
 }
 
 .range-head {
@@ -485,6 +512,7 @@ h2 em {
 
 .range article>div span {
   color: var(--gold);
+  font-size: 15px;
 }
 
 .range article h3 {
@@ -536,179 +564,521 @@ h2 em {
   font-size: 16px;
 }
 
-.journal {
-  padding-bottom: 145px;
+       /* Card Container layout - Forces a single row on desktop and handles spacing */
+.card-container {
+    display: flex;
+    flex-wrap: nowrap; /* Forces them to stay in a single row */
+    gap: 25px;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 5vw;
+    overflow-x: auto; /* Allows horizontal scrolling smoothly on smaller screens if needed */
 }
 
-.journal-grid {
-  display: grid;
-  grid-template-columns: 1.35fr .65fr;
-  gap: 22px;
+/* Individual Card Design matching your dark/luxury theme */
+.card {
+    background-color: var(--bg-card, #1a1a1a);
+    color: var(--text-main, #ffffff);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
-.journal-main {
-  position: relative;
-  background: #ddd5c8;
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold, #dfb15b);
 }
 
-.journal-main img {
-  height: 650px;
-  object-fit: cover;
+/* Card Image Box */
+.card-image {
+    width: 100%;
+    height: 220px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--muted, #999);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-.journal-main>div {
-  padding: 25px 30px 35px;
+/* Card Content Box */
+.card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.journal-main span,
-.journal-side span {
-  font-size: 10px;
-  letter-spacing: .15em;
-  font-weight: 800;
-  color: var(--gold);
+.card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-main, #ffffff);
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
-.journal h3 {
-  font-size: 32px;
-  line-height: 1.05;
-  letter-spacing: -.04em;
-  margin: 14px 0 20px;
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted, #999);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; 
 }
 
-.journal-main a {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-weight: 800;
-  text-decoration: none;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 8px;
+/* Action Button styled to match your gold/modern theme */
+.card-button {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--paper);
+    color: var(--bg-base, #0b0b0b);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.journal-main b {
-  margin-left: 14px;
+.card-button:hover {
+    background-color: #f1c46f;
 }
 
-.journal-side {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 22px;
+/* Responsive adjustment for mobile screens so they stack nicely when space is tight */
+@media(max-width: 1024px) {
+    .card-container {
+        flex-wrap: wrap; /* Stacks on tablets/mobile */
+        justify-content: center;
+    }
 }
 
-.journal-side article {
-  display: grid;
-  grid-template-columns: 46% 54%;
-  background: #e2dcd1;
+
+
+/* Card Image Container */
+.card-image {
+    width: 100%;
+    height: 220px;
+    background-color: var(--paper);
+    overflow: hidden;
+    position: relative;
 }
 
-.journal-side img {
-  height: 100%;
-  min-height: 250px;
-  object-fit: cover;
+/* Ensure the actual image covers the container nicely */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.journal-side article>span,
-.journal-side article>h3 {
-  margin-left: 25px;
-  margin-right: 20px;
+/* Smooth zoom effect on hover */
+.card:hover .card-image img {
+    transform: scale(1.05);
 }
 
-.journal-side article>span {
-  align-self: end;
-  margin-bottom: 8px;
+
+
+
+/* Reviews Section with Full White Background */
+.reviews-section {
+    background-color: var(--paper); /* Full white background for the section */
+    color: #111111;
+    padding: 7rem 5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.journal-side h3 {
-  align-self: start;
-  font-size: 25px;
+.reviews-container {
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
-.contact {
-  background: #a88d62;
-  color: #191713;
-  padding: 105px 8vw 120px;
+.reviews-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #111111;
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.5px;
 }
 
-.contact-top {
-  max-width: 1440px;
-  margin: auto;
-  border-top: 1px solid rgba(25, 23, 19, .28);
-  padding-top: 16px;
-  display: flex;
-  gap: 18px;
+.reviews-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
 }
 
-.contact-top span {
-  color: #4e402e;
-  font-weight: 800;
+/* Left Fixed Summary Card (Styled clean for white background) */
+.reviews-summary-card {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    min-width: 280px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.contact-top p {
-  font-size: 10px;
-  letter-spacing: .16em;
-  font-weight: 800;
-  margin: 0;
+.excellent-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #111111;
+    display: block;
+    margin-bottom: 0.8rem;
 }
 
-.contact-grid {
-  max-width: 1100px;
-  margin: 80px auto 0;
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 10vw;
-  align-items: end;
+.star-rating {
+    color: #fbbc05;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 3px;
 }
 
-.contact h2 {
-  font-size: clamp(58px, 7vw, 105px);
+.review-count {
+    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
 }
 
-.contact-grid>div p {
-  font-size: 17px;
-  color: #3d3428;
-  max-width: 410px;
-  margin: 0 0 30px;
+.review-count strong {
+    color: #111111;
 }
 
-.contact-button {
-  display: inline-flex;
-  gap: 28px;
-  align-items: center;
-  background: #171614;
-  color: #fff;
-  text-decoration: none;
-  padding: 18px 22px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-size: 11px;
-  font-weight: 800;
+.google-brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-.contact-button span {
-  font-size: 16px;
+.g-blue { color: #4285F4; }
+.g-red { color: #EA4335; }
+.g-yellow { color: #FBBC05; }
+.g-green { color: #34A853; }
+
+/* Right Slider Track & Viewport */
+.reviews-slider-container {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
 }
 
-footer {
-  background: #11110f;
-  color: #aaa59a;
-  padding: 34px 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 11px;
+.review-cards-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-footer .logo {
-  color: #fff;
+/* White Review Cards */
+.review-card {
+    background: #ffffff; 
+    color: #111111;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 2rem;
+    min-width: 340px;
+    max-width: 380px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
-footer a {
-  text-decoration: none;
+.review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+    position: relative;
 }
 
-footer p {
-  margin: 0;
+.reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #2c4a4e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    overflow: hidden;
 }
+
+.reviewer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-3 { background-color: #8b1e41; }
+
+.reviewer-meta h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 2px;
+}
+
+.reviewer-meta span {
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+.google-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #4285F4;
+    font-size: 1.1rem;
+}
+
+.review-stars {
+    color: #fbbc05;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.verified-badge {
+    color: #4285F4;
+    font-size: 0.95rem;
+    margin-left: 6px;
+}
+
+.review-text {
+    color: #444444;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.read-more {
+    color: #111111;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--gold, #dfb15b);
+}
+
+/* Small Arrow Navigation Button */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background-color: var(--gold, #dfb15b);
+    color: #0b0b0b;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Responsive adjustment */
+@media(max-width: 968px) {
+    .reviews-content-wrapper {
+        flex-direction: column;
+    }
+    .reviews-summary-card {
+        width: 100%;
+    }
+    .slider-arrow {
+        right: 5px;
+    }
+}
+
+
+
+/* Footer Styles */
+.site-footer {
+    background-color: #111111; /* Deep teal/green tone from your reference */
+    color: #ffffff;
+    padding: 4rem 5% 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-col h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a, 
+.footer-col p {
+    color: #b0c4c5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+/* Social Icons */
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(223, 177, 91, 0.2); /* Soft gold border */
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #dfb15b; /* Gold fill on hover */
+    color: #0b0b0b;
+    border-color: #dfb15b;
+    transform: translateY(-3px);
+}
+
+/* Footer Contact Bar (Email & Phone) */
+.footer-contact-bar {
+    max-width: 1400px;
+    margin: 2.5rem auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    color: #dfb15b; /* Accent gold touch */
+}
+
+/* Copyright Bottom Bar */
+.footer-bottom {
+    background-color: var(--paper);
+    color: #111111;
+    text-align: center;
+    padding: 0.1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .footer-contact-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Ensure footer contact links are fully interactive */
+.footer-contact-bar a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    pointer-events: auto !important; /* Forces clickability */
+}
+
+.footer-contact-bar a:hover {
+    color: var(--gold, #9d7d4d);
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
 
 .reveal {
   opacity: 0;
