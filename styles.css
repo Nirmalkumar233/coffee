@@ -1827,3 +1827,85 @@ img, video {
   .contact-page-main { padding-inline: 1rem !important; }
   .contact-concierge-card { padding: 1.2rem !important; }
 }
+
+
+/* Final mobile viewport corrections: enforce full-width sections and readable cards. */
+html, body {
+  width: 100%;
+  max-width: 100%;
+}
+body { overflow-x: clip; }
+.card-container, .reviews-section, .site-footer {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .card-container {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    flex-wrap: initial !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 680px !important;
+    margin: 2rem auto !important;
+    padding: 0 !important;
+    gap: 1rem !important;
+    overflow: visible !important;
+  }
+  .card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    box-sizing: border-box;
+  }
+  .card-content { padding: 1.25rem !important; }
+  .card-title, .card-text { overflow-wrap: break-word; word-break: normal; }
+  .reviews-section {
+    width: 100% !important;
+    padding: 3rem 1rem !important;
+    box-sizing: border-box;
+  }
+  .reviews-content-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 1.25rem !important;
+  }
+  .reviews-summary-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    padding: 1.75rem 1rem !important;
+  }
+  .reviews-slider-container {
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .review-cards-track {
+    display: flex;
+    gap: 1rem !important;
+    width: max-content;
+  }
+  .review-card {
+    flex: 0 0 calc(100vw - 4rem) !important;
+    width: calc(100vw - 4rem) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 4rem) !important;
+    box-sizing: border-box;
+  }
+  .site-footer {
+    width: 100% !important;
+    padding: 2.5rem 1rem 1rem !important;
+    box-sizing: border-box;
+  }
+  .footer-container {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    gap: 1.5rem !important;
+  }
+  .footer-contact-bar { width: 100%; min-width: 0; flex-wrap: wrap; }
+  .site-footer .footer-bottom { width: 100%; box-sizing: border-box; }
+}
