@@ -1909,3 +1909,31 @@ body { overflow-x: clip; }
   .footer-contact-bar { width: 100%; min-width: 0; flex-wrap: wrap; }
   .site-footer .footer-bottom { width: 100%; box-sizing: border-box; }
 }
+
+
+/* Ensure the copyright remains visible even though the mobile footer hides other paragraphs. */
+.site-footer .footer-bottom,
+.site-footer .footer-bottom a,
+.site-footer .footer-bottom p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.site-footer .footer-bottom {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #111;
+}
+.site-footer .footer-bottom a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-footer .footer-bottom p {
+  margin: 0;
+  padding: 0.65rem 0.5rem;
+  color: #111 !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
