@@ -176,13 +176,13 @@
   </header>
 
   <!-- Products Main Content -->
-  <main style="padding-top: 140px; max-width: 1400px; margin: 0 auto; padding-left: 8vw; padding-right: 8vw; padding-bottom: 120px;">
+  <main style="padding-top: 140px; max-width: 1400px; margin: 0 auto; padding-left: clamp(18px, 8vw, 120px); padding-right: clamp(18px, 8vw, 120px); padding-bottom: 120px;">
     <div class="section-top"><span></span><p>OUR COLLECTION</p></div>
     <h1 style="font-family: 'Maname', serif; font-size: clamp(3rem, 5vw, 5rem); font-weight: 800; margin-bottom: 20px;">Engineered for<br><em>absolute perfection.</em></h1>
     <p style="font-size: 1.15rem; color: #5e5a53; max-width: 600px; margin-bottom: 80px;">Explore our complete line of flagship espresso systems, each crafted with precision engineering, thermal stability, and uncompromised extraction power.</p>
 
     <!-- Products Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 40px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 40px;">
       
       <!-- Machine 1: Royal Titan Pro -->
       <div style="background: var(--paper); border-radius: 12px; overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column;">
