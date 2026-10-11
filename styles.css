@@ -1622,3 +1622,173 @@ h2 em {
     animation-duration: 14s;
   }
 }
+
+
+/* Mobile responsiveness patch — preserves the existing RoyalCafe visual direction. */
+img, video {
+  max-width: 100%;
+}
+.hero-media video,
+.ritual-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-container,
+.reviews-content-wrapper,
+.reviews-slider-container,
+.review-cards-track {
+  min-width: 0;
+}
+.card-container {
+  width: min(100% - 2rem, 1400px);
+  margin-inline: auto;
+}
+.card,
+.card-image,
+.card-content {
+  min-width: 0;
+}
+.card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.review-cards-track {
+  will-change: transform;
+}
+.review-card {
+  box-sizing: border-box;
+}
+.header .mobile-nav {
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 1002;
+}
+.header .menu {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.header .mobile-nav a,
+.header .menu {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 768px) {
+  .hero-media {
+    min-height: clamp(260px, 75vw, 500px);
+    height: auto;
+  }
+  .product-stage {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+  .product-stage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .details-image,
+  .statement-image {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .details-image img,
+  .statement-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ritual-media {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .range-grid {
+    gap: 1.25rem;
+  }
+  .card-container {
+    width: calc(100% - 2rem);
+    gap: 1rem;
+  }
+  .reviews-section {
+    padding-inline: 1rem;
+  }
+  .reviews-content-wrapper {
+    gap: 1.5rem;
+  }
+  .reviews-summary-card {
+    box-sizing: border-box;
+  }
+  .review-card {
+    min-width: min(82vw, 340px);
+    max-width: min(82vw, 340px);
+    padding: 1.25rem;
+  }
+  .review-cards-track {
+    gap: 1rem;
+  }
+  .slider-arrow {
+    right: 4px;
+    width: 40px;
+    height: 40px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1rem;
+  }
+  .footer-contact-bar {
+    gap: 1rem;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 480px) {
+  .header .logo {
+    font-size: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 3.6rem);
+    overflow-wrap: anywhere;
+  }
+  .intro h2,
+  .machine h2,
+  .details h2,
+  .ritual h2,
+  .range h2,
+  .statement h2,
+  .journal h2 {
+    font-size: clamp(2.25rem, 10vw, 3.1rem);
+  }
+  .hero-copy,
+  .details-copy,
+  .ritual-copy,
+  .statement-copy {
+    padding-inline: 6vw;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .review-card {
+    min-width: calc(100vw - 4rem);
+    max-width: calc(100vw - 4rem);
+  }
+  .ticker-group {
+    gap: 2rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header *,
+  .review-cards-track,
+  .slider-arrow,
+  .ticker-track {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
