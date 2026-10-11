@@ -1829,3 +1829,157 @@ img, video {
   font-weight: 600;
 }
 
+
+
+/* Mobile layout correction based on live-device screenshots:
+   keep full-width sections full-width, stack service cards, and show footer text. */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.card-container,
+.reviews-section,
+.site-footer {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    flex-wrap: initial;
+    justify-content: initial;
+    gap: 1.25rem;
+    width: calc(100% - 2rem);
+    max-width: 680px;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    flex: initial;
+  }
+
+  .card-content {
+    padding: 1.25rem;
+  }
+
+  .card-title,
+  .card-text,
+  .card-button {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .reviews-section {
+    padding: 3.5rem 1rem;
+  }
+
+  .reviews-container,
+  .reviews-content-wrapper,
+  .reviews-slider-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .reviews-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .reviews-summary-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1rem;
+  }
+
+  .reviews-slider-container {
+    overflow: hidden;
+  }
+
+  .review-card {
+    flex: 0 0 calc(100vw - 4rem);
+    width: calc(100vw - 4rem);
+    min-width: 0;
+    max-width: calc(100vw - 4rem);
+    padding: 1.25rem;
+  }
+
+  .review-cards-track {
+    gap: 1rem;
+  }
+
+  .slider-arrow {
+    right: 0.35rem;
+  }
+
+  .site-footer {
+    padding: 2.5rem 1rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .footer-contact-bar {
+    width: 100%;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* An earlier mobile rule hid every footer paragraph, including copyright. */
+  .site-footer p,
+  .site-footer .footer-bottom p {
+    display: block;
+  }
+
+  .site-footer .footer-bottom {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 1.25rem;
+    padding: 12px 10px;
+    text-align: center;
+  }
+
+  .site-footer .footer-bottom p {
+    margin: 0;
+    color: #111;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-header h2 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.15;
+    overflow-wrap: normal;
+  }
+
+  .site-footer .footer-bottom p {
+    font-size: 0.78rem;
+  }
+}
