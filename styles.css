@@ -1937,3 +1937,42 @@ body { overflow-x: clip; }
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
+
+
+/* Alignment refinements for Services and Terms pages. */
+.services-page-main,
+.terms-page-main { width: 100%; box-sizing: border-box; min-width: 0; }
+.services-page-main h1,
+.terms-page-main h1 { max-width: 100%; overflow-wrap: break-word; }
+.services-page-main > p { line-height: 1.7; }
+.services-page-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; align-items: stretch; }
+.service-page-card { min-width: 0; height: 100%; }
+.service-page-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.service-page-card-content { min-width: 0; }
+.service-page-card-content h3 { line-height: 1.25; }
+.service-page-card-content p { line-height: 1.7 !important; }
+.terms-page-content section { min-width: 0; }
+.terms-page-content h3 { line-height: 1.35; }
+.terms-page-content p { margin-top: 0; line-height: 1.8; overflow-wrap: break-word; }
+@media (max-width: 1000px) {
+  .services-page-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; }
+  .services-page-main { padding-left: 5vw !important; padding-right: 5vw !important; }
+  .service-page-card-content { padding: 26px !important; }
+}
+@media (max-width: 650px) {
+  .services-page-main { padding: 108px 1rem 4rem !important; }
+  .services-page-main .section-top,
+  .terms-page-main .section-top { margin-bottom: 2rem; }
+  .services-page-main h1 { font-size: clamp(2.35rem, 10vw, 3.5rem) !important; line-height: 1.04; letter-spacing: -.035em; margin-bottom: 1.1rem !important; }
+  .services-page-main > p { font-size: 1rem !important; line-height: 1.7; margin-bottom: 2rem !important; }
+  .services-page-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 1.25rem !important; }
+  .service-page-image { height: auto !important; aspect-ratio: 4 / 3; }
+  .service-page-card-content { padding: 1.25rem !important; }
+  .service-page-card-content h3 { font-size: 1.55rem !important; }
+  .service-page-card-content p { margin-bottom: 1.25rem !important; }
+  .terms-page-main { padding: 108px 1.25rem 4rem !important; }
+  .terms-page-title { font-size: clamp(2.25rem, 9vw, 3.25rem) !important; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.5rem !important; }
+  .terms-page-content { gap: 1.5rem !important; font-size: .98rem; }
+  .terms-page-content h3 { font-size: 1.15rem !important; margin-bottom: .5rem !important; }
+  .terms-page-content p { line-height: 1.75; }
+}
