@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Clients | Royal Cafe</title>
+<meta name="description" content="Royal Cafe's valued corporate partnerships and workplace supply relationships.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--cl-gold:#E1BA66;--cl-ink:#181715;--cl-paper:#f6f2e9;--cl-muted:#69645b}
+.clients-page{max-width:1480px;margin:auto;padding:140px 7vw 95px;color:var(--cl-ink)}
+.clients-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;margin-bottom:75px}
+.cl-eyebrow{display:flex;align-items:center;gap:12px;color:#94743b;font:800 .72rem Manrope,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:20px}
+.cl-eyebrow:before{content:"";height:2px;width:34px;background:var(--cl-gold)}
+.clients-hero h1{font:700 clamp(3rem,6vw,5.8rem)/.97 "Cormorant Garamond",serif;letter-spacing:-.03em;margin:0 0 22px}
+.clients-hero h1 em{color:#98763d;font-weight:500}
+.clients-hero .lead{font:400 1rem/1.85 Manrope,sans-serif;color:var(--cl-muted);max-width:670px}
+.hero-panel{background:linear-gradient(145deg,#292720,#11110f);color:#f7f2e8;border-radius:16px;padding:clamp(28px,4vw,48px);min-height:300px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.hero-panel:before,.hero-panel:after{content:"";position:absolute;border:1px solid #e1ba6645;border-radius:50%;width:300px;height:300px;right:-100px;top:-130px}
+.hero-panel:after{width:210px;height:210px;right:-55px;top:-85px}
+.hero-panel .symbol,.hero-panel h2,.hero-panel p,.hero-panel .foot{position:relative;z-index:1}
+.hero-panel .symbol{color:var(--cl-gold);font-size:1.7rem}
+.hero-panel h2{font:600 clamp(2rem,3vw,3.1rem)/1.05 "Cormorant Garamond",serif;max-width:400px;margin:35px 0 14px}
+.hero-panel p{color:#c9c2b5;line-height:1.7;font-size:.9rem;max-width:390px}
+.hero-panel .foot{border-top:1px solid #ffffff25;padding-top:17px;margin-top:25px;color:var(--cl-gold);font:800 .68rem Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;border-bottom:1px solid #d8d0c2;padding-bottom:22px;margin-bottom:28px}
+.section-heading h2{font:700 clamp(2.3rem,4vw,3.5rem)/1 "Cormorant Garamond",serif;margin:0}
+.section-heading p{max-width:460px;color:var(--cl-muted);font:400 .88rem/1.7 Manrope,sans-serif;margin:0}
+.client-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.client-card{background:#fffdf8;border:1px solid #e2dbcf;border-radius:14px;padding:26px;display:grid;grid-template-columns:155px minmax(0,1fr);gap:25px;align-items:start;transition:transform .25s,border-color .25s,box-shadow .25s}
+.client-card:hover{transform:translateY(-4px);border-color:#d4b46e;box-shadow:0 18px 35px #201b1010}
+.client-logo{height:125px;width:100%;padding:14px;border:1px solid #eee8dc;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center}
+.client-logo img{display:block;max-width:100%;max-height:95px;width:auto;height:auto;object-fit:contain}
+.client-type{color:#94743b;text-transform:uppercase;letter-spacing:.13em;font:800 .64rem Manrope,sans-serif;margin:1px 0 8px}
+.client-card h3{font:700 1.55rem/1.1 "Cormorant Garamond",serif;margin:0 0 10px}
+.client-card p{color:var(--cl-muted);font:400 .85rem/1.75 Manrope,sans-serif;margin:0 0 9px}
+.client-card .partnership{border-top:1px solid #e8e1d5;padding-top:11px;margin-top:12px}
+.client-card strong{color:#29261f}
+.cl-note{color:#777064;font:400 .78rem/1.7 Manrope,sans-serif;margin:24px 0 72px}
+.cl-cta{background:#191917;color:var(--cl-paper);border-radius:16px;padding:clamp(30px,5vw,58px);display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.cl-cta h2{font:600 clamp(2.2rem,4vw,3.4rem)/1.02 "Cormorant Garamond",serif;margin:0 0 13px}
+.cl-cta p{color:#c5bfb3;line-height:1.75;max-width:620px;margin:0}
+.cl-cta a{display:inline-flex;gap:14px;align-items:center;padding:16px 24px;background:var(--cl-gold);color:#171612;text-decoration:none;font:800 .74rem Manrope,sans-serif;letter-spacing:.05em;white-space:nowrap}
+@media(max-width:1000px){.clients-hero{grid-template-columns:1fr}.client-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.clients-page{padding:115px 5vw 65px}.section-heading{display:block}.section-heading p{margin-top:14px}.client-card{grid-template-columns:1fr;gap:17px}.client-logo{height:105px;max-width:240px}.cl-cta{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.client-card{transition:none}.client-card:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="header" id="top" data-header>
+<a class="logo magnetic" href="index.html" aria-label="RoyalCafe home"><img src="assets/images/logo.png" alt="RoyalCafe Logo" height="30"> ROYAL CAFE</a>
+<nav class="desktop-nav"><a href="products.html">Products</a><a href="services.html">Our Services</a><a href="client.html" style="color:var(--gold)">Our Clients</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></nav>
+<a class="header-cta magnetic" href="contact.html">ENQUIRE<span>↗</span></a>
+<button class="menu" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+<nav class="mobile-nav"><a href="products.html">Products</a><a href="services.html">Our Services</a><a href="client.html">Our Clients</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></nav>
+</header>
+<main class="clients-page">
+<section class="clients-hero">
+<div><div class="cl-eyebrow">Our valued relationships</div><h1>Trusted partnerships.<br><em>Lasting relationships.</em></h1><p class="lead">Royal Cafe is proud to build relationships with respected organisations across different industries. We value every partnership and work to deliver dependable service, consistent quality, and workplace solutions shaped around each client’s needs.</p></div>
+<aside class="hero-panel"><div class="symbol"><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i></div><div><h2>Good service builds trust. Trust builds partnerships.</h2><p>We’re proud to work alongside businesses whose teams and day-to-day operations deserve thoughtful, reliable support.</p></div><div class="foot">Royal Cafe · Corporate partnerships</div></aside>
+</section>
+<section aria-labelledby="client-heading"><div class="section-heading"><h2 id="client-heading">Our Valued Clients</h2><p>Get to know the organisations we’re connected with and how Royal Cafe supports their workplace requirements.</p></div>
+<div class="client-grid">
+<article class="client-card"><div class="client-logo"><img src="assets/clients/advics.png" alt="ADVICS logo"></div><div><div class="client-type">Automotive technology</div><h3>ADVICS</h3><p><strong>About the organisation:</strong> ADVICS develops automotive braking systems and related technologies, supporting vehicle safety and performance.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> Royal Cafe values its association with ADVICS and aims to support workplace needs through dependable service and tailored supply solutions.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/aisin.png" alt="AISIN logo"></div><div><div class="client-type">Automotive manufacturing</div><h3>AISIN</h3><p><strong>About the organisation:</strong> AISIN is a global automotive supplier producing components and systems for vehicles and mobility applications.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> Our relationship is built around understanding workplace requirements and providing service aligned with the client’s needs.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/Chefcraft-logo-scaled.png" alt="Chefcraft logo"></div><div><div class="client-type">Food and hospitality services</div><h3>Chefcraft</h3><p><strong>About the organisation:</strong> Chefcraft provides food and hospitality services, supporting food-service operations and guest experiences.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> Royal Cafe values this industry relationship and works collaboratively to support agreed service and supply requirements.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/cheftalk.png" alt="Chef Talk logo"></div><div><div class="client-type">Food and hospitality services</div><h3>Chef Talk</h3><p><strong>About the organisation:</strong> Chef Talk identifies itself as a food and hospitality services company.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> We value the association and focus on reliable coordination and solutions suited to the requirements agreed with the client.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/ikas-corporate-solutions-logo.jpeg" alt="IKAS Corporate Solutions logo"></div><div><div class="client-type">Facility solutions</div><h3>IKAS Corporate Solutions</h3><p><strong>About the organisation:</strong> IKAS Corporate Solutions highlights facility support through its “Your Facility, Our Priority” positioning.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> Royal Cafe values working alongside service partners and coordinating to meet workplace requirements with care and consistency.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/itron.png" alt="Itron logo"></div><div><div class="client-type">Technology and utilities</div><h3>Itron</h3><p><strong>About the organisation:</strong> Itron provides technology solutions that help utilities and communities manage energy, water, and other essential resources.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> We appreciate the relationship and focus on dependable service designed around the workplace’s needs.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/kern.jpeg" alt="Kern-Liebers logo"></div><div><div class="client-type">Industrial manufacturing</div><h3>KERN-LIEBERS</h3><p><strong>About the organisation:</strong> KERN-LIEBERS develops precision components and assemblies, including springs and technical parts for industrial applications.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> Royal Cafe values its connection with the organisation and seeks to provide consistent support based on agreed requirements.</p></div></article>
+<article class="client-card"><div class="client-logo"><img src="assets/clients/mahindra-aerospace-logo_new.png" alt="Mahindra Aerospace logo"></div><div><div class="client-type">Aerospace manufacturing</div><h3>Mahindra Aerospace</h3><p><strong>About the organisation:</strong> Mahindra Aerospace is associated with aerospace manufacturing and engineering, serving the aviation and aerospace sector.</p><p class="partnership"><strong>Royal Cafe partnership:</strong> We value the association and aim to support the client’s workplace requirements through responsive, reliable service.</p></div></article>
+</div>
+<p class="cl-note">The company descriptions are brief industry summaries. Please confirm the exact services Royal Cafe provides to each organisation before publishing the partnership text, so each profile accurately reflects your relationship.</p>
+</section>
+<section class="cl-cta"><div><h2>Every partnership matters.</h2><p>Looking for a dependable partner for your workplace beverage, pantry, or fresh-fruit supply needs? Let’s discuss a solution tailored to your organisation.</p></div><a href="contact.html">PARTNER WITH ROYAL CAFE <span aria-hidden="true">↗</span></a></section>
+</main>
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-col"><h3>Company Links</h3><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Our Other Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="footer-col"><h3>Useful Links</h3><ul><li><a href="client.html">Our Clients</a></li><li><a href="careers.html">Join With Us</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li></ul></div>
+<div class="footer-col"><h3>Contact Info</h3><p><strong>Royal Cafe</strong><br>No: 1373, 1st Floor, 1st Main Road<br>Terige Bhavan Road, Nagarabhavi, 2nd Stage<br>Bengaluru, Karnataka<br>India</p></div>
+<div class="footer-col"><h3>Stay Connected</h3><div class="social-icons"><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="footer-trust-logos" aria-label="FSSAI and Make in India"><img src="assets/images/fssai.png" alt="FSSAI" loading="lazy"><img src="assets/images/made.png" alt="Make in India" loading="lazy"></div></div>
+</div>
+<div class="footer-contact-bar"><div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:contact@royalcafeblr.com"> contact@royalcafeblr.com </a></div><div class="contact-item"><i class="fa-solid fa-phone"></i><a href="tel:9108042035"> +91 9108042035</a></div><a href="#top">Back to top ↑</a></div>
+<div class="footer-bottom"><a href="https://octo-corp.github.io/octo-corp/"><p>&copy; 2026 All Rights Reserved By OctoCorp Solutions</p></a></div>
+</footer>
+<script src="script.js"></script>
+<div class="wabtn" id="wabutton"><style>@keyframes wa-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}.wabtn a{position:fixed;right:20px;bottom:20px;z-index:999999;display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#00E785;box-shadow:4px 5px 10px #0004;animation:wa-pulse 2.5s ease infinite}.wabtn a svg{width:38px;height:38px}@media(prefers-reduced-motion:reduce){.wabtn a{animation:none}}</style><a aria-label="Chat with Royal Cafe on WhatsApp" href="https://wa.me/919108042035?text=Hi%21%20I%27m%20interested%20in%20Royal%20Cafe%20services.%20Please%20share%20more%20information."><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.9 4.1A13.8 13.8 0 0 0 2 20.8L.1 28l7.4-1.9A13.8 13.8 0 0 0 23.9 4.1ZM14.1 25.1a11 11 0 0 1-5.8-1.6l-.5-.3-4.3 1.1 1.2-4.2-.3-.5a11 11 0 1 1 9.7 5.5Zm6-8.2c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.2-.7.1a9 9 0 0 1-4.4-3.8c-.3-.4.3-.4.8-1.4.1-.2 0-.4 0-.6s-.7-1.7-.9-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4 2.4 3.7 5.9 5.2c.8.3 1.4.5 2.2.1.7-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4s-.3-.2-.6-.4Z" fill="white"/></svg></a></div>
+</body>
+</html>
